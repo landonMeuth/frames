@@ -1,13 +1,14 @@
 function main(){
-    const currentHoursMinutes = getTime();
-    console.log(currentHoursMinutes); // Prints the current time in "HH:MM" format
-    
-    
-    switchImage();
-    
-    const jsonData='{"cool": "wow","age": 3}';
-    const data = JSON.parse(jsonData);
-    console.log(data.age)
+  const currentHoursMinutes = getTime();
+  console.log(currentHoursMinutes); // Prints the current time in "HH:MM" format
+  
+  
+  switchImage();
+  openJSON();
+  
+  //const index='./index.json';
+  const data = JSON.parse(index);
+  console.log(data.schedule)
 }
 
 function getTime() {
@@ -17,7 +18,10 @@ function getTime() {
   return `${hours}:${minutes}`;
 }
 
-
+function openJSON() {
+  const fs = require('fs');
+  index = fs.readFileSync('index.json', 'utf8');
+}
 
 function switchImage() {
 	var element="./files/rad.png"

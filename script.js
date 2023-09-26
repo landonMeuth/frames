@@ -5,6 +5,9 @@ function main(){
     
     switchImage();
     
+    const json='{"cool": "wow","age": 3}';
+    const data = JSON.parse(jsonData);
+    console.log
 }
 
 function getTime() {

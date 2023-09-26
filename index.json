@@ -1,0 +1,36 @@
+{
+    "Schedule": [
+        {
+            "name": ["cool","rad"],
+            "start": "none",
+            "end": "none"
+        },
+        {
+            "name": ["end"],
+            "start": "1:30",
+            "end": "1:40"
+        },
+    ]
+    
+    "frame": [
+        {
+            "name": "cool",
+            "text": "none"
+            "image": "cool.png"
+            "url": "none"
+        },
+        {
+            "name": "rad",
+            "text": "none"
+            "image": "rad.png"
+            "url": "none"
+        },
+        {
+            "name": "end",
+            "text": "none"
+            "image": "end.png"
+            "url": "none"
+        },
+    ]
+
+}

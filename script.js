@@ -3,8 +3,7 @@ function main(){
     console.log(currentHoursMinutes); // Prints the current time in "HH:MM" format
     
     
-    const sample = require('./index.json');
-    console.log(sample.schedule);
+    switchImage();
     
 }
 

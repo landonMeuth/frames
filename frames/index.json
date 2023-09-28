@@ -1,36 +1,21 @@
 {
-    "Schedule": [
-        {
-            "name": ["cool","rad"],
-            "start": "none",
-            "end": "none"
-        },
-        {
-            "name": ["end"],
-            "start": "1:30",
-            "end": "1:40"
-        },
-    ]
-    
+    "schedule": {
+      "time": [
+        ["1:30","2:20"],
+        ["4:30","8:20"],
+        ["00:00","99:99"]
+      ],
+      "frameName": [
+        ["1"],
+        ["2"],
+        ["1","2","3"]
+      ]
+    },
     "frame": [
-        {
-            "name": "cool",
-            "text": "none"
-            "image": "cool.png"
-            "url": "none"
-        },
-        {
-            "name": "rad",
-            "text": "none"
-            "image": "rad.png"
-            "url": "none"
-        },
-        {
-            "name": "end",
-            "text": "none"
-            "image": "end.png"
-            "url": "none"
-        },
+        ["1","cool.png","",""],
+        ["2","rad.png","",""],
+        ["3","awesome.png","",""]
     ]
+  }
 
-}
+

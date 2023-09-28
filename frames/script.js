@@ -4,8 +4,8 @@ function main(){
   
   
   
-  index=openJSON();
-  const data = JSON.parse(index);
+  //index=openJSON();
+  //const data = JSON.parse(index);
 
   var time=data.schedule.time;
   var frameName=data.schedule.frameName;
@@ -71,8 +71,8 @@ function compareTime(time1,time2) {
 
 function openJSON() {
   //https://www.youtube.com/watch?v=Z92PqSyUBSI
-  const index='{"schedule":{"time":[["13:00","13:53"],["4:30","8:20"],["00:00","99:99"]],"frameName": [["1","3"],["2"],["1","2","3"]]},"frame": [["1","cool.png",""],["2","rad.png",""],["3","awsome.png",""]]}';
-  FileReader.readAsText()
+  //const index='{"schedule":{"time":[["13:00","13:53"],["4:30","8:20"],["00:00","99:99"]],"frameName": [["1","3"],["2"],["1","2","3"]]},"frame": [["1","cool.png",""],["2","rad.png",""],["3","awsome.png",""]]}';
+  var index = require ('./index.json')
 
   return index;
 }

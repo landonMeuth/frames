@@ -1,3 +1,5 @@
+var currentFrame = 0;
+
 function main(){
   const currentTime = getTime();
   console.log(currentTime); // Prints the current time in "HH:MM" format
@@ -13,24 +15,25 @@ function main(){
   //this part is where we check the json time
 
   var counter=0
-  console.log(time.length)
+  console.log(time.length);
   for (let i=0; i <= time.length; i++) {
     if (compareTime(time[i][0],currentTime)=="<" && compareTime(time[i][1],currentTime)==">"){
-      counter=i
+      counter=i;
       console.log(i);
       break
     }
   }
 
-  //this is the part where the frame is referenced 
-  var frameToUse=frameName[counter][randInt(0,frameName[counter].length - 1)];
+  //this is the part where the frame is referenced
+  cycle(frameName[counter].length - 1) 
+  var frameToUse=frameName[counter][currentFrame];
   for (let i=0; i <= frame.length; i++) {
     if (frameToUse==frame[i][0]) {
       var image=frame[i][1];
       var list=frame[i][2];
       var url=frame[i][3];
-      console.log(image, frameToUse.length)
-      break
+      console.log(image, frameToUse.length);
+      break;
     }
   }
 
@@ -69,22 +72,27 @@ function compareTime(time1,time2) {
   }
 }
 
-function openJSON() {
-  //https://www.youtube.com/watch?v=Z92PqSyUBSI
-  //const index='{"schedule":{"time":[["13:00","13:53"],["4:30","8:20"],["00:00","99:99"]],"frameName": [["1","3"],["2"],["1","2","3"]]},"frame": [["1","cool.png",""],["2","rad.png",""],["3","awsome.png",""]]}';
-  var index = require ('./index.json')
-
-  return index;
-}
-
 function switchImage(newImage,newList,newURL) {
 	var element="./files/"+newImage;
-  console.log("./files/"+newImage);
-	document.getElementById('mainElement').src=element;
+	document.getElementById('image').src=element;
+
+  var element="./files/"+newList;
+	document.getElementById('list').src=element;
+
+  var element="./files/"+newURL;
+	document.getElementById('url').src=element;
 }
 
-function randInt(min,max) {
-  return (Math.floor(Math.random() * (max - min + 1)) + min);
+function randInt(max) {
+  return (Math.floor(Math.random() * (max - 0 + 1)) + 0);
+}
+
+function cycle(length) {
+  currentFrame+=1;
+  if (currentFrame > length) {
+    currentFrame=0;
+  }
+  console.log("current frame "+currentFrame);
 }
 
 

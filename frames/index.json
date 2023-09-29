@@ -15,7 +15,7 @@ data = {
     },
     "frame": [
         // the frame's name and it's parts [name, image file, text file, url text file]
-        ["1","cool.png","",""],
+        ["1","cool.png","test.txt",""],
         ["2","rad.png","",""],
         ["3","awesome.png","",""]
     ]

@@ -3,11 +3,6 @@ var currentFrame = 0;
 function main(){
   const currentTime = getTime();
   console.log(currentTime); // Prints the current time in "HH:MM" format
-  
-  
-  
-  //index=openJSON();
-  //const data = JSON.parse(index);
 
   var time=data.schedule.time;
   var frameName=data.schedule.frameName;
@@ -15,11 +10,9 @@ function main(){
   //this part is where we check the json time
 
   var counter=0
-  console.log(time.length);
   for (let i=0; i <= time.length; i++) {
     if (compareTime(time[i][0],currentTime)=="<" && compareTime(time[i][1],currentTime)==">"){
       counter=i;
-      console.log(i);
       break
     }
   }
@@ -30,14 +23,12 @@ function main(){
   for (let i=0; i <= frame.length; i++) {
     if (frameToUse==frame[i][0]) {
       var image=frame[i][1];
-      var list=frame[i][2];
-      var url=frame[i][3];
-      console.log(image, frameToUse.length);
+      var url=frame[i][2];
       break;
     }
   }
 
-  switchImage(image,list,url);
+  switchImage(image,url);
 }
 
 function getTime() {
@@ -72,15 +63,24 @@ function compareTime(time1,time2) {
   }
 }
 
-function switchImage(newImage,newList,newURL) {
-	var element="./files/"+newImage;
-	document.getElementById('image').src=element;
+function switchImage(newImage,newURL) {
+	if (newImage=="") {
+    document.getElementById('image').style.display = "none";
+  } else {
+    var element="./files/"+newImage;
+	  document.getElementById('image').src=element;
+    document.getElementById('image').style.display = "block";
+  }
+  
 
-  var element="./files/"+newList;
-	document.getElementById('list').src=element;
-
-  var element="./files/"+newURL;
-	document.getElementById('url').src=element;
+  if (newURL=="") {
+    document.getElementById('url').style.display = "none";
+  } else {
+    var element="./files/"+newURL;
+	  document.getElementById('url').src=element;
+    document.getElementById('url').style.display = "block";
+  }
+  
 }
 
 function randInt(max) {
@@ -92,7 +92,6 @@ function cycle(length) {
   if (currentFrame > length) {
     currentFrame=0;
   }
-  console.log("current frame "+currentFrame);
 }
 
 

@@ -3,14 +3,14 @@ data = {
       "time": [
         //[start time, end time]
         ["1:30","2:20"],
-        ["16:30","17:00"],
+        ["11:00","11:39"],
         ["00:00","99:99"]//it mentions all times of day, so if there is nothing scheduled then this is the default.
       ],
       "frameName": [
         //based on the position of the time, the name of the frame or frames is called
         ["1"],
         ["2"],
-        ["1","2","3","falsch","ja"]
+        ["1","2","3","text"]
       ]
     },
     "frame": [
@@ -18,8 +18,7 @@ data = {
         ["1","cool.png","test.txt"],
         ["2","rad.png",""],
         ["3","awesome.png",""],
-        ["falsch","",""],
-        ["ja","","test.txt"]
+        ["text","","test.txt"]
     ]
   }
 

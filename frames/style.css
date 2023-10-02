@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100vw;
+    max-height: 100vh;
+}
+
+img, iframe{
+    object-fit: cover;
+    width: 100vw;
+    max-height: 100vh;
+}

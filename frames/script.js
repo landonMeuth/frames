@@ -98,3 +98,6 @@ function cycle(length) {
 
 
 setInterval(main, 3000);
+
+
+

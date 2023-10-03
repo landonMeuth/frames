@@ -1,34 +1,20 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: black;
+html{
+    margin: 0%;
+    border: 0%;
 }
 
-.container {
+.container{
     display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 100vw;
-    max-height: 100vh;
+    margin: 0%;
+    border: 0%;
 }
 
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+iframe {
+    min-width:40svw;
+    height:100svh;
 }
 
-img{
-    object-fit: cover;
-    width: 100vw;
-    max-height: 100vh;
-}
-
-iframe{
-    object-fit: cover;
-    width: 100vw;
-    max-height: 100vh;
+img {
+    min-width:60svw;
+    height:auto
 }

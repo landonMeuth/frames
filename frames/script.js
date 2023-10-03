@@ -9,10 +9,10 @@ function main(){
   var frame=data.frame;
   //this part is where we check the json time
 
-  var counter=0
-  for (let i=0; i <= time.length; i++) {
-    if (compareTime(time[i][0],currentTime)=="<" && compareTime(time[i][1],currentTime)==">"){
-      counter=i;
+  var counter=0//the counter refers to the position of the schedule list 
+  for (let i=0; i <= time.length; i++) {//looks at each time and tests for time
+    if (compareTime(time[i][0],currentTime)=="<" && compareTime(time[i][1],currentTime)==">"){ //sees if current time is between start and end times in json scheduler
+      counter=i;//the counter is now eaqual to the possition of time inside the json list
       break
     }
   }
@@ -65,26 +65,30 @@ function compareTime(time1,time2) {
 
 function switchImage(newImage,newURL) {
 	if (newImage=="") {
-    document.getElementById('image').style.display = "none";
+    document.getElementById('image').style.display = "none";//image will dissapere
+      document.getElementById('url').className = "imageGone";//url style changed
   } else {
     var element="./files/"+newImage;
-	  document.getElementById('image').src=element;
-    document.getElementById('image').style.display = "block";
+	  document.getElementById('image').src=element;//asset swap
+    document.getElementById('image').style.display = "block";//image will reapere
+      document.getElementById('url').className = "imageThere";//url style changed
   }
   
 
   if (newURL=="") {
-    document.getElementById('url').style.display = "none";
+    document.getElementById('url').style.display = "none";//embed will dissapere
+      document.getElementById('image').className = "urlGone";//image style changed
   } else {
-    var element="./files/"+newURL;
-	  document.getElementById('url').src=element;
-    document.getElementById('url').style.display = "block";
+    if (frameName[counter].length - 1 == 1) {
+      console.log("same thing");//the asset remains the same and will no be changed
+    } else {
+      var element="./files/"+newURL;//assigns file path to file
+      document.getElementById('url').src=element;//asset change
+    }
+    document.getElementById('url').style.display = "block";//url will apere
+      document.getElementById('image').className = "urlThere";//image style changed
   }
   
-}
-
-function randInt(max) {
-  return (Math.floor(Math.random() * (max - 0 + 1)) + 0);
 }
 
 function cycle(length) {

@@ -12,7 +12,22 @@ body {
     max-height: 100vh;
 }
 
-img, iframe{
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+img{
+    object-fit: cover;
+    width: 100vw;
+    max-height: 100vh;
+}
+
+iframe{
     object-fit: cover;
     width: 100vw;
     max-height: 100vh;

@@ -1,2 +1,0 @@
-the repository code is in the folder "frames".
-save and open are for the purpose of syncing git repositories.
